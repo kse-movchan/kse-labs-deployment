@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
       - name: my-app
-        image: ghcr.io/kse-movchan/microservice-lab:initial 
+        image: ghcr.io/kse-movchan/microservice-lab:5d232288f1ab44e42ecbf5aa189eb8e945a5fb07
         ports:
         - containerPort: 3000
