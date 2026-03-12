@@ -19,7 +19,7 @@ spec:
         - name: ghcr-pull-secret
       containers:
         - name: my-app
-          image: ghcr.io/kse-movchan/kse-labs-deployment:f30d82d
+          image: ghcr.io/kse-movchan/kse-labs-deployment:9d9b73a48186637706fe8400a60b27daae2d78a3
           ports:
             - name: http
               containerPort: 3000
