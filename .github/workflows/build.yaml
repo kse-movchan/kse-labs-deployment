@@ -30,7 +30,7 @@ jobs:
         run: |
           # Use the built-in GITHUB_TOKEN to authenticate the runner
           $user = "${{ github.actor }}".ToLower()
-          "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u $user --password-stdin
+          "${{ secrets.GH_PAT }}" | docker login ghcr.io -u $user --password-stdin
 
       - name: Build and Push
         shell: pwsh
