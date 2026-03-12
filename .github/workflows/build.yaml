@@ -29,7 +29,8 @@ jobs:
         shell: pwsh
         run: |
           # Use the built-in GITHUB_TOKEN to authenticate the runner
-          echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u ${{ github.actor }} --password-stdin
+          $user = "${{ github.actor }}".ToLower()
+          "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u $user --password-stdin
 
       - name: Build and Push
         shell: pwsh
