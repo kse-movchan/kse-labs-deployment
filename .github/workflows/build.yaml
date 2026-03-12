@@ -27,10 +27,12 @@ jobs:
 
       - name: Log in to GHCR
         shell: pwsh
+        env:
+          MY_PASSWORD: ${{ secrets.GH_PAT }}
         run: |
           # Use the built-in GITHUB_TOKEN to authenticate the runner
           $user = "${{ github.actor }}".ToLower()
-          "${{ secrets.GH_PAT }}" | docker login ghcr.io -u $user --password-stdin
+          echo "$env:MY_PASSWORD" | docker login ghcr.io -u $user --password-stdin
 
       - name: Build and Push
         shell: pwsh
