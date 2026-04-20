@@ -31,6 +31,7 @@ infra/gatekeeper-policies/
 | Directory | Kind | Constraint name | Enforcement |
 |---|---|---|---|
 | `read-only-root-fs/` | `K8sPSPReadOnlyRootFilesystem` | `pods-must-use-read-only-root-fs` | `dryrun` |
+| `required-labels/` | `K8sRequiredLabels` | `deployments-must-have-owner-label` | `deny` |
 
 ## Sync ordering
 
