@@ -2,9 +2,6 @@ apiVersion: constraints.gatekeeper.sh/v1beta1
 kind: K8sPSPReadOnlyRootFilesystem
 metadata:
   name: pods-must-use-read-only-root-fs
-  annotations:
-    # Apply after the ConstraintTemplate so the generated CRD exists.
-    argocd.argoproj.io/sync-wave: "1"
 spec:
   # dryrun: the audit controller reports violations but admission is not
   # blocked. Flip to `deny` once existing workloads have been remediated
