@@ -6,6 +6,12 @@ metadata:
     # Apply after the ConstraintTemplate in the same sync so Gatekeeper
     # has a chance to generate the CRD this Constraint depends on.
     argocd.argoproj.io/sync-wave: "1"
+    # This Constraint's CRD (K8sPSPReadOnlyRootFilesystem) is generated
+    # by Gatekeeper from the ConstraintTemplate in the previous wave.
+    # On first sync the CRD does not yet exist, so ArgoCD's client-side
+    # dry-run errors. This tells ArgoCD to skip that dry-run for this
+    # resource only.
+    argocd.argoproj.io/sync-options: SkipDryRunOnMissingResource=true
 spec:
   # dryrun: the audit controller reports violations but admission is not
   # blocked. Flip to `deny` once existing workloads have been remediated
