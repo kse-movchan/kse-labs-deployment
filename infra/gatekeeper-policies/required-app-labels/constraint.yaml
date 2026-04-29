@@ -7,16 +7,16 @@ metadata:
     argocd.argoproj.io/sync-options: SkipDryRunOnMissingResource=true
 spec:
   enforcementAction: dryrun
-match:
-  kinds:
-    - apiGroups: ["apps"]
-      kinds: ["Deployment"]
-  namespaces:
-    - applications
-parameters:
-  message: "All deployments in `applications` namespace should have the labels from the list: `owner`, `env`, `cost-center`, `app.kubernetes.io/name`"
-  labels:
-    - key: owner
-    - key: env
-    - key: cost-center
-    - key: app.kubernetes.io/name
+  match:
+    kinds:
+      - apiGroups: ["apps"]
+        kinds: ["Deployment"]
+    namespaces:
+      - applications
+  parameters:
+    message: "All deployments in `applications` namespace should have the labels from the list: `owner`, `env`, `cost-center`, `app.kubernetes.io/name`"
+    labels:
+      - key: owner
+      - key: env
+      - key: cost-center
+      - key: app.kubernetes.io/name
