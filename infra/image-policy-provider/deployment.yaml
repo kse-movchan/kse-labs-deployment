@@ -55,8 +55,8 @@ spec:
           type: RuntimeDefault
       containers:
         - name: provider
-          image: ghcr.io/kse-bd8338bbe006/image-policy-provider:latest
-          imagePullPolicy: IfNotPresent
+          image: ghcr.io/kse-movchan/image-policy-provider:latest
+          imagePullPolicy: Always
           ports:
             - name: https
               containerPort: 8443
