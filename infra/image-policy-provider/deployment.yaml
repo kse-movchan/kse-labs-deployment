@@ -56,7 +56,7 @@ spec:
       containers:
         - name: provider
           image: ghcr.io/kse-bd8338bbe006/image-policy-provider:latest
-          imagePullPolicy: Always
+          imagePullPolicy: IfNotPresent
           ports:
             - name: https
               containerPort: 8443
