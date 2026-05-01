@@ -22,7 +22,7 @@ data:
   # Comma-separated repo prefixes the verifier will accept. The image
   # itself must be pinned by digest (repo@sha256:<64hex>); the prefix
   # is matched against the repo portion before the @.
-  ALLOWED_REGISTRIES: "ghcr.io/kse-bd8338bbe006"
+  ALLOWED_REGISTRIES: "ghcr.io/kse-movchan"
 
   # ---- Trust mode 1: key-based ----
   # Path to a Cosign public key inside the container. Defaults to the
@@ -30,14 +30,14 @@ data:
   # every verification fails until a real key is loaded OR keyless
   # mode is configured below. Set to "-" (or unset by removing the
   # line) to use keyless mode instead.
-  COSIGN_KEY_PATH: "/etc/cosign/cosign.pub"
+  COSIGN_KEY_PATH: ""
 
   # ---- Trust mode 2: keyless (GitHub Actions OIDC) ----
   # Uncomment and fill in to verify Sigstore-signed images instead of
   # key-based ones. The verifier picks keyless mode whenever
   # COSIGN_KEY_PATH is empty AND both of these are set.
-  # COSIGN_IDENTITY: "https://github.com/<your-org>/<your-repo>/.github/workflows/<workflow>.yml@refs/heads/main"
-  # COSIGN_OIDC_ISSUER: "https://token.actions.githubusercontent.com"
+  COSIGN_IDENTITY: "https://github.com/kse-movchan/image-sig-demo/.github/workflows/build-and-sign.yaml@refs/heads/main"
+  COSIGN_OIDC_ISSUER: "https://token.actions.githubusercontent.com"
 
   # ---- Logging ----
   LOG_LEVEL: "INFO"
