@@ -30,7 +30,7 @@ data:
   # every verification fails until a real key is loaded OR keyless
   # mode is configured below. Set to "-" (or unset by removing the
   # line) to use keyless mode instead.
-  COSIGN_KEY_PATH: ""
+  #COSIGN_KEY_PATH: ""
 
   # ---- Trust mode 2: keyless (GitHub Actions OIDC) ----
   # Uncomment and fill in to verify Sigstore-signed images instead of
